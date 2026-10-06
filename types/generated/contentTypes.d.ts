@@ -484,6 +484,12 @@ export interface ApiStudentStudent extends Struct.CollectionTypeSchema {
         maxLength: 25;
         minLength: 1;
       }>;
+    password: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 6;
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
